@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | Graphic Designer</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+        .intro {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffcc00;
+            color: #000;
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeOut 3s forwards;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
+        }
+        .header {
+            background-color: #ffcc00;
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .section {
+            height: 100vh;
+            padding: 50px;
+        }
+        #home { background-color: #f5f5f5; }
+        #about { background-color: #e6e6e6; display: flex; align-items: center; gap: 30px; }
+        #contact { background-color: #d9d9d9; }
+        .about-text { flex: 1; }
+        .about-image { flex: 1; max-width: 300px; }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .project-card {
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            background-color: #fbda54;
+            color: #000;
+        }
+        .footer {
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function openPDF(pdfLink) {
+            window.open(pdfLink, '_blank');
+        }
+        window.onload = function() {
+            setTimeout(() => {
+                document.querySelector('.intro').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <div class="intro">PORTFOLIO</div>
+
+    <div class="header">
+        PORTFOLIO
+        <div class="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger">&#9776;</div>
+    </div>
+
+    <div id="home" class="section">
+        <h2>Home</h2>
+        <p>Welcome to my graphic design portfolio!</p>
+
+        <div class="container">
+            <div class="project-card" onclick="openPDF('ricky and trucks.pdf')">
+                <h3>Illustration</h3>
+                <p>Illustration for kids book.</p>
+            </div>
+            <div class="project-card" onclick="openPDF('zenith arrange.pdf')">
+                <h3>Branding</h3>
+                <p>Visual Brand Identity.</p>
+            </div>
+            <div class="project-card" onclick="openPDF('wildlife photography.pdf')">
+                <h3>Photography</h3>
+                <p>Series of Wildlife photography.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a graphic design student passionate about storytelling through visuals. I specialize in branding, illustration, and photography.</p>
+            <p><a href="resume.pdf" target="_blank">View My Resume</a></p>
+        </div>
+        <div class="about-image">
+            <img src="profile-image.jpg" alt="Graphic Designer Image" style="width:100%; border-radius: 8px;">
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: visualknack@gmail.com</p>
+        <p>Phone: +123-456-7890</p>
+        <p><a href="https://www.behance.net/riyamahajan10" target="_blank">View My Behance Profile</a></p>
+    </div>
+
+    <div class="footer">&copy; 2025 Graphic Designer | All Rights Reserved</div>
+</body>
+</html>
